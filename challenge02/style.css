@@ -30,12 +30,18 @@ body {
   padding: 50px 0;
 }
 
+.sub-container {
+  width: 50%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
 .intro-content {
   width: 50%;
-  margin: 0 auto;
 }
 
 .second-container {
   width: 50%;
+  max-width: 750px;
   margin: 0 auto;
 }
