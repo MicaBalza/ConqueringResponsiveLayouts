@@ -23,14 +23,14 @@ body {
   font-family: sans-serif;
 }
 
-.container {
+.intro {
   margin: 0 auto;
   background: #23424a;
   color: white;
   padding: 50px 0;
 }
 
-.sub-container {
+.container {
   width: 50%;
   max-width: 750px;
   margin: 0 auto;
@@ -38,10 +38,4 @@ body {
 
 .intro-content {
   width: 50%;
-}
-
-.second-container {
-  width: 50%;
-  max-width: 750px;
-  margin: 0 auto;
 }
