@@ -64,25 +64,26 @@ a {
   opacity: 0.75;
 }
 
-.row {
-  display: flex;
+.three-col {
   text-align: center;
-  padding: 80px 0;
+  padding: 3em 0;
 }
 
-.col h2 {
+.three-col h2 {
   color: #87629a;
 }
 
-.col + .col {
-  margin-left: 2rem;
-}
-
-.green {
+.two-col {
+  text-align: center;
+  padding: 3em 0;
   background-color: #136c72;
   color: white;
 }
 
-.green h2 {
-  color: white;
+.row {
+  display: flex;
+}
+
+.col + .col {
+  margin-left: 2rem;
 }
