@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&family=Oswald:wght@700&display=swap");
+
+/*
+--------------
+--- GLOBAL ---
+--------------
+*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 1.125rem;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Oswald";
+  font-size: clamp(4rem, 15vw, 5.625rem);
+  line-height: 1em;
+}
+
+h2 {
+  font-family: "Oswald";
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-family: "Oswald";
+  font-size: 1.875rem;
+}
+
+h4 {
+  font-family: "Oswald";
+  font-size: 1.5rem;
+  margin-bottom: 2em;
+}
+
+h5 {
+  font-family: "Oswald";
+  font-size: 1.3rem;
+}
+
+p {
+  font-weight: 200;
+  line-height: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+button:focus {
+  border: none;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  outline: none;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accent-color {
+  color: #a59678;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aligned-center {
+  align-items: center;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: #a59678;
+  color: #fff;
+  padding: 0.25em 1.5em;
+  border-radius: 100px;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+section {
+  padding: 3em 0;
+}
+
+/*
+--------------
+---- NAV -----
+--------------
+*/
+
+header {
+  background-color: #2e323f;
+  padding: 1em 0;
+  color: #fff;
+}
+
+.logo {
+  width: 50px;
+}
+
+.nav-toggle {
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  width: 3em;
+  height: 3em;
+  padding: 0em;
+  color: white;
+  transition: opacity 250ms ease;
+  z-index: 1;
+}
+
+.nav {
+  visibility: hidden;
+  padding: 5em 2em 2em 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #2e323f;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
+  font-family: "Oswald";
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  animation-duration: 0.7s;
+  animation-name: slideout;
+}
+
+.nav-item + .nav-item {
+  margin-top: 1em;
+}
+
+.visible {
+  visibility: visible;
+  animation-duration: 0.7s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    right: -500px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slideout {
+  from {
+    visibility: visible;
+    right: 0;
+  }
+  to {
+    visibility: hidden;
+    right: -500px;
+  }
+}
+
+/*
+--------------
+---- HERO ----
+--------------
+*/
+
+.hero {
+  background-color: #3b4050;
+  color: #fff;
+}
+
+.hero__content {
+  font-size: 1.5rem;
+}
+
+.hero__content p {
+  margin: 2em 0;
+  font-weight: 100;
+}
+
+/*
+--------------
+----- ONE ----
+--------------
+*/
+
+.section-one {
+  background-color: #f2f2f2;
+}
+
+.col + .col {
+  margin-top: 3em;
+}
+
+/*
+--------------
+----- TWO ----
+--------------
+*/
+
+.sidebar__el {
+  padding: 1em;
+  background-color: #3b4050;
+  color: #fff;
+  text-align: center;
+}
+
+.sidebar__el + .sidebar__el {
+  margin-top: 2em;
+}
+
+/*
+--------------
+--- FOOTER ---
+--------------
+*/
+
+footer {
+  padding: 3em 0;
+  background-color: #3b4050;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.footer__content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.footer__content h5 {
+  margin-top: 1em;
+}
+
+.footer__content__menu {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2em;
+}
+
+.footer__content__menu a {
+  font-weight: 100;
+  margin-top: 1em;
+}
+
+/*
+--------------
+--- QUERIES --
+--------------
+*/
+
+@media (min-width: 700px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    visibility: visible;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #fff;
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger--slider .hamburger-inner {
+  top: 2px;
+}
+.hamburger--slider .hamburger-inner::before {
+  top: 10px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+.hamburger--slider .hamburger-inner::after {
+  top: 20px;
+}
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+.hamburger--slider.is-active .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+}
+.hamburger--slider.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
