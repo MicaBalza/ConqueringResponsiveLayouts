@@ -49,7 +49,7 @@ h3 {
 h4 {
   font-family: "Oswald";
   font-size: 1.5rem;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 h5 {
@@ -87,15 +87,6 @@ li {
   color: #a59678;
 }
 
-.flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-.aligned-center {
-  align-items: center;
-}
-
 .container {
   width: 85%;
   max-width: 1200px;
@@ -126,6 +117,12 @@ header {
   background-color: #2e323f;
   padding: 1em 0;
   color: #fff;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -229,15 +226,15 @@ header {
 --------------
 */
 
-.sidebar__el {
+.section-two__content p {
+  margin-bottom: 3em;
+}
+
+.sidebar-item {
   padding: 1em;
   background-color: #3b4050;
   color: #fff;
   text-align: center;
-}
-
-.sidebar__el + .sidebar__el {
-  margin-top: 2em;
 }
 
 /*
@@ -272,29 +269,6 @@ footer {
 .footer__content__menu a {
   font-weight: 100;
   margin-top: 1em;
-}
-
-/*
---------------
---- QUERIES --
---------------
-*/
-
-@media (min-width: 700px) {
-  .nav-toggle {
-    display: none;
-  }
-
-  .nav {
-    visibility: visible;
-    position: relative;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-menu {
-    display: flex;
-  }
 }
 
 /*!
@@ -390,4 +364,87 @@ footer {
 }
 .hamburger--slider.is-active .hamburger-inner::after {
   transform: translate3d(0, -20px, 0) rotate(-90deg);
+}
+
+/*
+--------------
+--- QUERIES --
+--------------
+*/
+
+@media (min-width: 700px) {
+  .flex,
+  .sidebar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .col {
+    width: 30%;
+  }
+
+  .col + .col {
+    margin-top: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    visibility: visible;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    animation: none;
+    box-shadow: none;
+    font-size: 1rem;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-item + .nav-item {
+    margin-top: 0;
+    margin-left: 2em;
+  }
+
+  .section-one {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  section {
+    padding: 7em 0;
+  }
+
+  .hero-flex {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .section-two-flex {
+    display: flex;
+  }
+
+  .section-two__content {
+    margin-right: 5em;
+  }
+
+  .sidebar {
+    display: block;
+  }
+
+  .sidebar-item {
+    width: auto;
+    margin-bottom: 2em;
+  }
+
+  .footer__content__about {
+    max-width: 40%;
+    margin-right: 2em;
+  }
 }
